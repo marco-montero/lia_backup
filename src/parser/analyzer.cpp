@@ -8,6 +8,8 @@
  ****************************************************************************/
 
 #include "lia/parser/analyzer.hpp"
+#include "lia/parser/skipper.hpp"
+#include "lia/parser/translation_unit.hpp"
 
 namespace lia {
 
@@ -23,12 +25,20 @@ bool Analyzer::parse(boost::filesystem::path const &file)
   return true;
 }
 
-bool Analyzer::parse(std::vector<char *> const &text)
+bool Analyzer::parse(std::string const &text)
 {
+  typedef std::string::const_iterator IteratorType;
+  IteratorType iter = text.begin();
+  IteratorType end = text.end();
 
-  return true;
+  client::translation_unit<IteratorType> translation_unit;
+  client::skipper<IteratorType> skipper;
+
+  bool success = phrase_parse(iter, end, translation_unit, skipper);
+
+  return success;
 }
 
-}
+} // namespace parser
 
-}
+} // namespace lia

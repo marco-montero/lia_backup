@@ -32,4 +32,4 @@ include_directories (${Boost_INCLUDE_DIRS})
 add_subdirectory (src)
 
 # Build tests
- add_subdirectory (tests)
+add_subdirectory (tests)
