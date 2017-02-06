@@ -19,3 +19,19 @@ BOOST_AUTO_TEST_CASE(first_test)
 
   BOOST_TEST(true == analyzer.parse(empty));
 }
+
+BOOST_AUTO_TEST_CASE(simple_string)
+{
+  lia::parser::Analyzer analyzer;
+  std::string single("abcd");
+
+  BOOST_TEST(true == analyzer.parse(single));
+}
+
+BOOST_AUTO_TEST_CASE(empty_string)
+{
+  lia::parser::Analyzer analyzer;
+  std::string empty;
+
+  BOOST_TEST(true == analyzer.parse(empty));
+}

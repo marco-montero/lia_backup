@@ -23,9 +23,18 @@ translation_unit<Iterator>::translation_unit() :
   translation_unit::base_type(translation_unit_)
 {
   qi::char_type char_;
+  qi::eps_type eps_;
 
   translation_unit_ =
-    *char_
+    *declaration_seq_
+    ;
+
+  declaration_seq_ =
+    declaration_ >> *(declaration_)
+    ;
+
+  declaration_ =
+    char_
     ;
 }
 

@@ -32,6 +32,9 @@ struct translation_unit : qi::grammar<Iterator, skipper<Iterator>>
   translation_unit();
 
   qi::rule<Iterator, skipper<Iterator>> translation_unit_;
+  qi::rule<Iterator, skipper<Iterator>> declaration_seq_;
+  qi::rule<Iterator, skipper<Iterator>> declaration_;
+  qi::rule<Iterator, skipper<Iterator>> empty_declaration_;
 }; // struct translation_unit
 
 } // namespace client
