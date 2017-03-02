@@ -23,7 +23,7 @@ BOOST_AUTO_TEST_CASE(first_test)
 BOOST_AUTO_TEST_CASE(simple_string)
 {
   lia::parser::Analyzer analyzer;
-  std::string single("abcd");
+  std::string single("int function(int x);");
 
   BOOST_TEST(true == analyzer.parse(single));
 }

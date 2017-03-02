@@ -12,7 +12,7 @@
 
 #define BOOST_SPIRIT_NO_PREDEFINED_TERMINALS
 
-// #define BOOST_SPIRIT_QI_DEBUG
+#define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
 #include "skipper.hpp"

@@ -27,6 +27,10 @@ bool Analyzer::parse(boost::filesystem::path const &file)
 
 bool Analyzer::parse(std::string const &text)
 {
+  if (text.empty()) {
+    return true;
+  }
+
   typedef std::string::const_iterator IteratorType;
   IteratorType iter = text.begin();
   IteratorType end = text.end();

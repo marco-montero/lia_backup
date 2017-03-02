@@ -10,6 +10,10 @@
 #if !defined(LIA_PARSER_CLIENT_TRANSLATION_UNIT_DEF_HPP)
 #define LIA_PARSER_CLIENT_TRANSLATION_UNIT_DEF_HPP
 
+#include <iostream>
+
+#define BOOST_SPIRIT_DEBUG
+
 #include "translation_unit.hpp"
 
 namespace lia {
@@ -28,6 +32,9 @@ translation_unit<Iterator>::translation_unit() :
   qi::digit_type digit_;
   qi::lexeme_type lexeme_;
   qi::raw_type raw_;
+  using qi::on_error;
+  using qi::debug;
+  using qi::fail;
 
   translation_unit_ =
     *declaration_seq_
@@ -119,6 +126,73 @@ translation_unit<Iterator>::translation_unit() :
   digit_ =
     raw_[lexeme_[digit_]]
     ;
+
+  keyword_ =
+    *char_
+    ;
+
+  literal_ =
+    *char_
+    ;
+
+  operator_ =
+    char_("new")
+    | char_("delete")
+    | char_("new[]")
+    | char_("delete")
+    | char_("+")
+    | char_("-")
+    | char_("*")
+    | char_("%")
+    | char_("^")
+    | char_("&")
+    | char_("|")
+    | char_("~")
+    | char_("!")
+    | char_("=")
+    | char_("<")
+    | char_(">")
+    | char_("+=")
+    | char_("-=")
+    | char_("*=")
+    | char_("/=")
+    | char_("%=")
+    | char_("^=")
+    | char_("&=")
+    | char_("|=")
+    | char_("<<")
+    | char_(">>")
+    | char_(">>=")
+    | char_("<<=")
+    | char_("==")
+    | char_("!=")
+    | char_("<=")
+    | char_(">=")
+    | char_("&&")
+    | char_("||")
+    | char_("++")
+    | char_("--")
+    | char_(",")
+    | char_("->*")
+    | char_("->")
+    | char_("()")
+    | char_("[]")
+    ;
+
+  punctuator_ =
+    *char_
+    ;
+
+  translation_unit_.name("translation_unit");
+  declaration_seq_.name("declaration_seq");
+
+  on_error<fail>
+      (translation_unit_,
+          std::cout << "fail" << std::endl;
+       )
+    ;
+
+  debug(translation_unit_);
 }
 
 } // namespace client
