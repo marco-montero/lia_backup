@@ -15,6 +15,8 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "block_declaration.hpp"
+#include "function_definition.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +33,11 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   declaration();
 
+  block_declaration<Iterator> block_declaration_;
+  qi::rule<Iterator, skipper<Iterator>> declaration_;
+  function_definition<Iterator> function_definition_;
+
+  /*
   qi::rule<Iterator, skipper<Iterator>> alignment_specifier_;
   qi::rule<Iterator, skipper<Iterator>> attribute_;
   qi::rule<Iterator, skipper<Iterator>> attribute_argument_clause_;
@@ -42,7 +49,6 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
   qi::rule<Iterator, skipper<Iterator>> attribute_token_;
   qi::rule<Iterator, skipper<Iterator>> balanced_token_;
   qi::rule<Iterator, skipper<Iterator>> balanced_token_seq_;
-  qi::rule<Iterator, skipper<Iterator>> declaration_;
   qi::rule<Iterator, skipper<Iterator>> declaration_seq_;
   qi::rule<Iterator, skipper<Iterator>> declarator_;
   qi::rule<Iterator, skipper<Iterator>> decl_specifier_seq_;
@@ -61,6 +67,8 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
   qi::rule<Iterator, skipper<Iterator>> translation_unit_;
   qi::rule<Iterator, skipper<Iterator>> universal_character_name_;
   qi::rule<Iterator, skipper<Iterator>> virt_specifier_seq_;
+  */
+
 }; // struct declaration
 
 } // namespace client

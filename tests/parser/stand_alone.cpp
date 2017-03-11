@@ -16,7 +16,7 @@ int main()
 {
   lia::parser::Analyzer analyzer;
 
-  std::string code("int function(int x);");
+  std::string code("asm ( \" test \") ;");
 
   auto resp = analyzer.parse(code);
 

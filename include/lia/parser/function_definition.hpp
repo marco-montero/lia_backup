@@ -1,0 +1,76 @@
+/****************************************************************************
+ *   function_definition.hpp    Sat Mar  11, 2017 11:32 AM                  *
+ *                                                                          *
+ *   Copyright (C) 2017-2020, Marco Montero.                                *
+ *                                                                          *
+ *   <marco.montero.m@gmail.com>                                            *
+ *                                                                          *
+ ****************************************************************************/
+
+#if !defined(LIA_PARSER_FUNCTION_DEFINITION_HPP)
+#define LIA_PARSER_FUNCTION_DEFINITION_HPP
+
+#define BOOST_SPIRIT_NO_PREDEFINED_TERMINALS
+
+#define BOOST_SPIRIT_QI_DEBUG
+#include <boost/spirit/include/qi.hpp>
+
+#include "skipper.hpp"
+
+namespace lia {
+
+namespace parser {
+
+namespace client {
+
+namespace qi = boost::spirit::qi;
+namespace ascii = boost::spirit::ascii;
+
+template <typename Iterator>
+struct function_definition : qi::grammar<Iterator, skipper<Iterator>>
+{
+  function_definition();
+
+  qi::rule<Iterator, skipper<Iterator>> function_definition_;
+
+  /*
+  qi::rule<Iterator, skipper<Iterator>> alignment_specifier_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_argument_clause_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_list_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_namespace_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_scoped_token_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_specifier_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_specifier_seq_;
+  qi::rule<Iterator, skipper<Iterator>> attribute_token_;
+  qi::rule<Iterator, skipper<Iterator>> balanced_token_;
+  qi::rule<Iterator, skipper<Iterator>> balanced_token_seq_;
+  qi::rule<Iterator, skipper<Iterator>> function_definition_seq_;
+  qi::rule<Iterator, skipper<Iterator>> declarator_;
+  qi::rule<Iterator, skipper<Iterator>> decl_specifier_seq_;
+  qi::rule<Iterator, skipper<Iterator>> digit_;
+  qi::rule<Iterator, skipper<Iterator>> empty_function_definition_; // not useful so far
+  qi::rule<Iterator, skipper<Iterator>> function_body_;
+  qi::rule<Iterator, skipper<Iterator>> function_definition_;
+  qi::rule<Iterator, skipper<Iterator>> identifier_;
+  qi::rule<Iterator, skipper<Iterator>> identifier_nondigit_;
+  qi::rule<Iterator, skipper<Iterator>> keyword_;
+  qi::rule<Iterator, skipper<Iterator>> literal_;
+  qi::rule<Iterator, skipper<Iterator>> nondigit_;
+  qi::rule<Iterator, skipper<Iterator>> operator_;
+  qi::rule<Iterator, skipper<Iterator>> punctuator_;
+  qi::rule<Iterator, skipper<Iterator>> token_;
+  qi::rule<Iterator, skipper<Iterator>> translation_unit_;
+  qi::rule<Iterator, skipper<Iterator>> universal_character_name_;
+  qi::rule<Iterator, skipper<Iterator>> virt_specifier_seq_;
+  */
+
+}; // struct function_definition
+
+} // namespace client
+
+} // namespace parsing
+
+} // namespace lia
+
+#endif // LIA_PARSER_FUNCTION_DEFINITION_HPP

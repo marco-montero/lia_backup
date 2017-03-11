@@ -43,12 +43,6 @@ translation_unit<Iterator>::translation_unit() :
   declaration_seq_ =
     declaration_ >> *(declaration_)
     ;
-
-  translation_unit_.name("translation_unit");
-  declaration_seq_.name("declaration_seq");
-
-  debug(translation_unit_);
-  debug(declaration_seq_);
 }
 
 } // namespace client

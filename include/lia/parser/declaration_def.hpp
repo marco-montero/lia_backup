@@ -37,6 +37,11 @@ declaration<Iterator>::declaration() :
   using qi::fail;
 
   declaration_ =
+    block_declaration_
+    | function_definition_
+    ;
+
+  /*
     function_definition_
     | char_
     ;
@@ -174,6 +179,7 @@ declaration<Iterator>::declaration() :
   punctuator_ =
     *char_
     ;
+    */
 
   declaration_.name("declaration");
 
