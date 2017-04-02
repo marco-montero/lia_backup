@@ -38,42 +38,9 @@ block_declaration<Iterator>::block_declaration() :
   using qi::fail;
 
   block_declaration_ =
-    *asm_definition_
+    string_literal_
+    | asm_definition_
     ;
-
-  asm_definition_ =
-    alpha_
-    | digit_
-    ;
-
-
-    /*    string_("asm") >> "(" >> string_literal_ >> ")" >> ";"
-    ;
-
-  string_literal_ =
-    !encoding_prefix_ >> string_literal_cont_
-    ;
-
-  string_literal_cont_ =
-    char_('"') >> !s_char_sequence_ >> '"'
-    | char_('R') >> raw_string_
-    ;
-
-  encoding_prefix_ =
-    string_("u8")
-    | char_("u")
-    | char_("U")
-    | char_("L")
-    ;
-
-  s_char_sequence_ =
-    +char_
-    ;
-
-  raw_string_ =
-    +char_
-    ;
-    */
 }
 
 } // namespace client

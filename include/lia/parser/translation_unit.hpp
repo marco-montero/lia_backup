@@ -7,8 +7,8 @@
  *                                                                          *
  ****************************************************************************/
 
-#if !defined(LIA_PARSER_TRANSLATION_UNIT_HPP)
-#define LIA_PARSER_TRANSLATION_UNIT_HPP
+#if !defined(LIA_PARSER_CLIENT_TRANSLATION_UNIT_HPP)
+#define LIA_PARSER_CLIENT_TRANSLATION_UNIT_HPP
 
 #define BOOST_SPIRIT_NO_PREDEFINED_TERMINALS
 
@@ -43,4 +43,4 @@ struct translation_unit : qi::grammar<Iterator, skipper<Iterator>>
 
 } // namespace lia
 
-#endif // LIA_PARSER_TRANSLATION_UNIT_HPP
+#endif // LIA_PARSER_CLIENT_TRANSLATION_UNIT_HPP

@@ -15,7 +15,9 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "asm_definition.hpp"
 #include "skipper.hpp"
+#include "string_literal.hpp"
 
 namespace lia {
 
@@ -31,13 +33,10 @@ struct block_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   block_declaration();
 
-  qi::rule<Iterator, skipper<Iterator>> asm_definition_;
-  qi::rule<Iterator, skipper<Iterator>> block_declaration_; /*
-  qi::rule<Iterator, skipper<Iterator>> encoding_prefix_;
-  qi::rule<Iterator, skipper<Iterator>> raw_string_;
-  qi::rule<Iterator, skipper<Iterator>> s_char_sequence_;
-  qi::rule<Iterator, skipper<Iterator>> string_literal_;
-  qi::rule<Iterator, skipper<Iterator>> string_literal_cont_;  */
+  asm_definition<Iterator> asm_definition_;
+  qi::rule<Iterator, skipper<Iterator>> block_declaration_;
+  string_literal<Iterator> string_literal_;
+
 }; // struct block_declaration
 
 } // namespace client
