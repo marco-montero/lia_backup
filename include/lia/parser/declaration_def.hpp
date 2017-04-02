@@ -39,6 +39,11 @@ declaration<Iterator>::declaration() :
   declaration_ =
     block_declaration_
     | function_definition_
+    | empty_declaration_
+    ;
+
+  empty_declaration_ =
+    char_(';')
     ;
 
   declaration_.name("declaration");

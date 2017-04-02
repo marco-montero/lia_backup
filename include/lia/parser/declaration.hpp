@@ -35,6 +35,7 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
 
   block_declaration<Iterator> block_declaration_;
   qi::rule<Iterator, skipper<Iterator>> declaration_;
+  qi::rule<Iterator, skipper<Iterator>> empty_declaration_;
   function_definition<Iterator> function_definition_;
 
 }; // struct declaration
