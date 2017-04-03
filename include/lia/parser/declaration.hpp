@@ -15,9 +15,15 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_declaration.hpp"
 #include "block_declaration.hpp"
+#include "explicit_instantiation.hpp"
+#include "explicit_specialization.hpp"
 #include "function_definition.hpp"
+#include "linkage_specification.hpp"
+#include "namespace_definition.hpp"
 #include "skipper.hpp"
+#include "template_declaration.hpp"
 
 namespace lia {
 
@@ -33,10 +39,16 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   declaration();
 
+  attribute_declaration<Iterator> attribute_declaration_;
   block_declaration<Iterator> block_declaration_;
   qi::rule<Iterator, skipper<Iterator>> declaration_;
   qi::rule<Iterator, skipper<Iterator>> empty_declaration_;
+  explicit_instantiation<Iterator> explicit_instantiation_;
+  explicit_specialization<Iterator> explicit_specialization_;
   function_definition<Iterator> function_definition_;
+  linkage_specification<Iterator> linkage_specification_;
+  namespace_definition<Iterator> namespace_definition_;
+  template_declaration<Iterator> template_declaration_;
 
 }; // struct declaration
 

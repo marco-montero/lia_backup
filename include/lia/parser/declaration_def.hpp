@@ -39,7 +39,13 @@ declaration<Iterator>::declaration() :
   declaration_ =
     block_declaration_
     | function_definition_
+    | template_declaration_
+    | explicit_instantiation_
+    | explicit_specialization_
+    | linkage_specification_
+    | namespace_definition_
     | empty_declaration_
+    | attribute_declaration_
     ;
 
   empty_declaration_ =
