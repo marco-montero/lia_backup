@@ -26,20 +26,19 @@ template <typename Iterator>
 block_declaration<Iterator>::block_declaration() :
   block_declaration::base_type(block_declaration_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
-  qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   block_declaration_ =
-    string_literal_
+    simple_declaration_
     | asm_definition_
+    | namespace_alias_definition_
+    | using_declaration_
+    | using_directive_
+    | static_assert_declaration_
+    | alias_declaration_
+    | opaque_enum_declaration_
     ;
 }
 

@@ -7,17 +7,23 @@
  *                                                                          *
  ****************************************************************************/
 
-#if !defined(LIA_PARSER_BLOCK_DECLARATION_HPP)
-#define LIA_PARSER_BLOCK_DECLARATION_HPP
+#if !defined(LIA_PARSER_CLIENT_BLOCK_DECLARATION_HPP)
+#define LIA_PARSER_CLIENT_BLOCK_DECLARATION_HPP
 
 #define BOOST_SPIRIT_NO_PREDEFINED_TERMINALS
 
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "alias_declaration.hpp"
 #include "asm_definition.hpp"
+#include "namespace_alias_definition.hpp"
+#include "opaque_enum_declaration.hpp"
+#include "simple_declaration.hpp"
 #include "skipper.hpp"
-#include "string_literal.hpp"
+#include "static_assert_declaration.hpp"
+#include "using_declaration.hpp"
+#include "using_directive.hpp"
 
 namespace lia {
 
@@ -33,9 +39,15 @@ struct block_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   block_declaration();
 
+  alias_declaration<Iterator> alias_declaration_;
   asm_definition<Iterator> asm_definition_;
   qi::rule<Iterator, skipper<Iterator>> block_declaration_;
-  string_literal<Iterator> string_literal_;
+  namespace_alias_definition<Iterator> namespace_alias_definition_;
+  opaque_enum_declaration<Iterator> opaque_enum_declaration_;
+  simple_declaration<Iterator> simple_declaration_;
+  static_assert_declaration<Iterator> static_assert_declaration_;
+  using_declaration<Iterator> using_declaration_;
+  using_directive<Iterator> using_directive_;
 
 }; // struct block_declaration
 
@@ -45,4 +57,4 @@ struct block_declaration : qi::grammar<Iterator, skipper<Iterator>>
 
 } // namespace lia
 
-#endif // LIA_PARSER_BLOCK_DECLARATION_HPP
+#endif // LIA_PARSER_CLIENT_BLOCK_DECLARATION_HPP

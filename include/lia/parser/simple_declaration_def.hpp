@@ -32,11 +32,13 @@ simple_declaration<Iterator>::simple_declaration() :
   qi::digit_type digit_;
   qi::lexeme_type lexeme_;
   qi::raw_type raw_;
+  qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   simple_declaration_ =
+    string_("simple_declaration")
     ;
 
   simple_declaration_.name("simple_declaration");
