@@ -38,7 +38,8 @@ simple_declaration<Iterator>::simple_declaration() :
   using qi::fail;
 
   simple_declaration_ =
-    string_("simple_declaration")
+    !decl_specifier_seq_ >> init_declarator_list_ >> char_(';')
+    | attribute_specifier_seq_ >> !decl_specifier_seq_ >> init_declarator_list_ >> char_(';')
     ;
 
   simple_declaration_.name("simple_declaration");

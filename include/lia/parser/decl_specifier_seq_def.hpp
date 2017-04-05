@@ -32,15 +32,14 @@ decl_specifier_seq<Iterator>::decl_specifier_seq() :
   qi::digit_type digit_;
   qi::lexeme_type lexeme_;
   qi::raw_type raw_;
+  qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   decl_specifier_seq_ =
-    decl_specifier_ >> decl_specifier_cont_
+    string_("decl_specifier_seq")
     ;
-
-  decl_specifier_ = 
 
   decl_specifier_seq_.name("decl_specifier_seq");
 

@@ -3,11 +3,14 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/asm_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/attribute_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/block_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_instantiation.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_specialization.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
@@ -32,11 +35,14 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/asm_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/attribute_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/block_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_instantiation.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_specialization.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
