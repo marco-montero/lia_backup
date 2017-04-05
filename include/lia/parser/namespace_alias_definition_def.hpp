@@ -38,7 +38,7 @@ namespace_alias_definition<Iterator>::namespace_alias_definition() :
   using qi::fail;
 
   namespace_alias_definition_ =
-    string_("namespace_alias_definition")
+    string_("namespace") >> identifier_ >> char_('=') >> qualified_namespace_specifier_
     ;
 
   namespace_alias_definition_.name("namespace_alias_definition");

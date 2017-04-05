@@ -15,6 +15,8 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "identifier.hpp"
+#include "qualified_namespace_specifier.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,7 +33,9 @@ struct namespace_alias_definition : qi::grammar<Iterator, skipper<Iterator>>
 {
   namespace_alias_definition();
 
+  identifier<Iterator> identifier_;
   qi::rule<Iterator, skipper<Iterator>> namespace_alias_definition_;
+  qualified_namespace_specifier<Iterator> qualified_namespace_specifier_;
 
 }; // struct namespace_alias_definition
 
