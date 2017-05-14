@@ -26,6 +26,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/type_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_directive.cpp
@@ -65,6 +66,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/type_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_directive.cpp

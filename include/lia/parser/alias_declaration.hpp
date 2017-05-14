@@ -15,7 +15,10 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "identifier.hpp"
 #include "skipper.hpp"
+#include "type_id.hpp"
 
 namespace lia {
 
@@ -32,6 +35,9 @@ struct alias_declaration : qi::grammar<Iterator, skipper<Iterator>>
   alias_declaration();
 
   qi::rule<Iterator, skipper<Iterator>> alias_declaration_;
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  identifier<Iterator> identifier_;
+  type_id<Iterator> type_id_;
 
 }; // struct alias_declaration
 

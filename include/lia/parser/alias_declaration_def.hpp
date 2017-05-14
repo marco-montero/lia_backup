@@ -38,7 +38,7 @@ alias_declaration<Iterator>::alias_declaration() :
   using qi::fail;
 
   alias_declaration_ =
-    string_("alias_declaration")
+    string_("using") >> identifier_ >> -attribute_specifier_seq_ >> char_('=') >> type_id_ >> char_(';')
     ;
 
   alias_declaration_.name("alias_declaration");
