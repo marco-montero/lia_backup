@@ -15,6 +15,9 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "namespace_name.hpp"
+#include "nested_name_specifier.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +34,9 @@ struct using_directive : qi::grammar<Iterator, skipper<Iterator>>
 {
   using_directive();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  namespace_name<Iterator> namespace_name_;
+  nested_name_specifier<Iterator> nested_name_specifier_;
   qi::rule<Iterator, skipper<Iterator>> using_directive_;
 
 }; // struct using_directive

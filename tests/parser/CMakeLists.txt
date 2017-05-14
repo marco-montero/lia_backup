@@ -15,6 +15,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/nested_name_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
@@ -51,6 +52,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/nested_name_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
