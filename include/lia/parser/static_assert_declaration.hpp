@@ -15,7 +15,9 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "constant_expression.hpp"
 #include "skipper.hpp"
+#include "string_literal.hpp"
 
 namespace lia {
 
@@ -31,7 +33,9 @@ struct static_assert_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   static_assert_declaration();
 
+  constant_expression<Iterator> constant_expression_;
   qi::rule<Iterator, skipper<Iterator>> static_assert_declaration_;
+  string_literal<Iterator> string_literal_;
 
 }; // struct static_assert_declaration
 

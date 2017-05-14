@@ -5,6 +5,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/block_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/constant_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_instantiation.cpp
@@ -43,6 +44,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/attribute_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/block_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/constant_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/explicit_instantiation.cpp

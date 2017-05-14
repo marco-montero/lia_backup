@@ -38,7 +38,8 @@ static_assert_declaration<Iterator>::static_assert_declaration() :
   using qi::fail;
 
   static_assert_declaration_ =
-    string_("static_assert_declaration")
+    string_("static_assert") >> char_('(') >> constant_expression_ >> char_(',')
+    >> string_literal_ >> char_(')') >> char_(';')
     ;
 
   static_assert_declaration_.name("static_assert_declaration");
