@@ -21,6 +21,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
@@ -58,6 +59,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
