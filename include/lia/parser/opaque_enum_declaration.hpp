@@ -15,7 +15,11 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "enum_key.hpp"
+#include "identifier.hpp"
 #include "skipper.hpp"
+#include "type_specifier_seq.hpp"
 
 namespace lia {
 
@@ -31,7 +35,12 @@ struct opaque_enum_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   opaque_enum_declaration();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  qi::rule<Iterator, skipper<Iterator>> enum_base_;
+  enum_key<Iterator> enum_key_;
+  identifier<Iterator> identifier_;
   qi::rule<Iterator, skipper<Iterator>> opaque_enum_declaration_;
+  type_specifier_seq<Iterator> type_specifier_seq_;
 
 }; // struct opaque_enum_declaration
 

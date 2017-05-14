@@ -38,7 +38,11 @@ opaque_enum_declaration<Iterator>::opaque_enum_declaration() :
   using qi::fail;
 
   opaque_enum_declaration_ =
-    string_("opaque_enum_declaration")
+    enum_key_ >> -attribute_specifier_seq_ >> identifier_ >> -enum_base_
+    ;
+
+  enum_base_ =
+    char_(':') >> type_specifier_seq_
     ;
 
   opaque_enum_declaration_.name("opaque_enum_declaration");
