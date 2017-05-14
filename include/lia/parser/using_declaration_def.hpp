@@ -38,7 +38,12 @@ using_declaration<Iterator>::using_declaration() :
   using qi::fail;
 
   using_declaration_ =
-    string_("using_declaration")
+    string_("using") >> using_declaration_cont_
+    ;
+
+  using_declaration_cont_ =
+    -string_("typename") >> nested_name_specifier_ >> unqualified_id_
+    | string_("::") >> unqualified_id_
     ;
 
   using_declaration_.name("using_declaration");

@@ -15,7 +15,9 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "nested_name_specifier.hpp"
 #include "skipper.hpp"
+#include "unqualified_id.hpp"
 
 namespace lia {
 
@@ -31,7 +33,10 @@ struct using_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   using_declaration();
 
+  nested_name_specifier<Iterator> nested_name_specifier_;
+  unqualified_id<Iterator> unqualified_id_;
   qi::rule<Iterator, skipper<Iterator>> using_declaration_;
+  qi::rule<Iterator, skipper<Iterator>> using_declaration_cont_;
 
 }; // struct using_declaration
 
