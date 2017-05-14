@@ -39,7 +39,7 @@ using_directive<Iterator>::using_directive() :
 
   using_directive_ =
     -attribute_specifier_seq_ >> string_("using") >> -string_("typename") >> -nested_name_specifier_ 
-    >> namespace_name_
+    >> namespace_name_ >> char_(';')
     ;
 
   using_directive_.name("using_directive");

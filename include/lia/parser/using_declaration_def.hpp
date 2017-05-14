@@ -42,8 +42,8 @@ using_declaration<Iterator>::using_declaration() :
     ;
 
   using_declaration_cont_ =
-    -string_("typename") >> nested_name_specifier_ >> unqualified_id_
-    | string_("::") >> unqualified_id_
+    -string_("typename") >> nested_name_specifier_ >> unqualified_id_ >> char_(';')
+    | string_("::") >> unqualified_id_ >> char_(';')
     ;
 
   using_declaration_.name("using_declaration");
