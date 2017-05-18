@@ -38,7 +38,9 @@ type_specifier<Iterator>::type_specifier() :
   using qi::fail;
 
   type_specifier_ =
-    string_("type_specifier")
+    trailing_type_specifier_
+    | class_specifier_
+    | enum_specifier_
     ;
 
   type_specifier_.name("type_specifier");

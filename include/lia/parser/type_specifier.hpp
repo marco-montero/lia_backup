@@ -15,7 +15,10 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "class_specifier.hpp"
+#include "enum_specifier.hpp"
 #include "skipper.hpp"
+#include "trailing_type_specifier.hpp"
 
 namespace lia {
 
@@ -31,6 +34,9 @@ struct type_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   type_specifier();
 
+  class_specifier<Iterator> class_specifier_;
+  enum_specifier<Iterator> enum_specifier_;
+  trailing_type_specifier<Iterator> trailing_type_specifier_;
   qi::rule<Iterator, skipper<Iterator>> type_specifier_;
 
 }; // struct type_specifier
