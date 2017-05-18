@@ -38,7 +38,12 @@ type_specifier_seq<Iterator>::type_specifier_seq() :
   using qi::fail;
 
   type_specifier_seq_ =
-    string_("type_specifier_seq")
+    type_specifier_ >> type_specifier_seq_cont_
+    ;
+
+  type_specifier_seq_cont_ =
+    type_specifier_seq_ |
+    -attribute_specifier_seq_
     ;
 
   type_specifier_seq_.name("type_specifier_seq");
