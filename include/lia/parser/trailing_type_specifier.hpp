@@ -15,7 +15,11 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "cv_qualifier.hpp"
+#include "elaborated_type_specifier.hpp"
+#include "simple_type_specifier.hpp"
 #include "skipper.hpp"
+#include "typename_specifier.hpp"
 
 namespace lia {
 
@@ -31,7 +35,11 @@ struct trailing_type_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   trailing_type_specifier();
 
+  cv_qualifier<Iterator> cv_qualifier_;
+  elaborated_type_specifier<Iterator> elaborated_type_specifier_;
+  simple_type_specifier<Iterator> simple_type_specifier_;
   qi::rule<Iterator, skipper<Iterator>> trailing_type_specifier_;
+  typename_specifier<Iterator> typename_specifier_;
 
 }; // struct trailing_type_specifier
 

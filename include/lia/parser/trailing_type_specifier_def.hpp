@@ -38,7 +38,10 @@ trailing_type_specifier<Iterator>::trailing_type_specifier() :
   using qi::fail;
 
   trailing_type_specifier_ =
-    string_("trailing_type_specifier")
+    simple_type_specifier_
+    | elaborated_type_specifier_
+    | typename_specifier_
+    | cv_qualifier_
     ;
 
   trailing_type_specifier_.name("trailing_type_specifier");
