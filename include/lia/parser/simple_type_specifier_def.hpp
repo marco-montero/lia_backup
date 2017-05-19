@@ -38,7 +38,27 @@ simple_type_specifier<Iterator>::simple_type_specifier() :
   using qi::fail;
 
   simple_type_specifier_ =
-    string_("simple_type_specifier")
+    -nested_name_specifier_ >> simple_type_specifier_cont_
+    ;
+
+  simple_type_specifier_cont_ =
+    type_name_
+    | string_("template") >> simple_template_id_
+    | string_("char")
+    | string_("char16_t")
+    | string_("char32_t")
+    | string_("wchar_t")
+    | string_("bool")
+    | string_("short")
+    | string_("int")
+    | string_("long")
+    | string_("signed")
+    | string_("unsigned")
+    | string_("float")
+    | string_("double")
+    | string_("void")
+    | string_("auto")
+    | decltype_specifier_
     ;
 
   simple_type_specifier_.name("simple_type_specifier");

@@ -9,6 +9,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/constant_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/cv_qualifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/decltype_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/enum_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/enum_specifier.cpp
@@ -26,6 +27,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
@@ -35,6 +37,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/typename_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_id.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/type_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
@@ -59,6 +62,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/constant_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/cv_qualifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/decltype_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/decl_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/enum_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/enum_specifier.cpp
@@ -76,6 +80,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
@@ -85,6 +90,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/typename_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_id.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/type_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier_seq.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
