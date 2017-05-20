@@ -15,6 +15,7 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "expression.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +32,7 @@ struct decltype_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   decltype_specifier();
 
+  expression<Iterator> expression_;
   qi::rule<Iterator, skipper<Iterator>> decltype_specifier_;
 
 }; // struct decltype_specifier

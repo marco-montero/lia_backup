@@ -38,7 +38,7 @@ decltype_specifier<Iterator>::decltype_specifier() :
   using qi::fail;
 
   decltype_specifier_ =
-    string_("decltype_specifier")
+    string_("decltype") >> char_('(') >> expression_ >> char_(')')
     ;
 
   decltype_specifier_.name("decltype_specifier");
