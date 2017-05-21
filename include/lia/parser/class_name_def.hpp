@@ -38,7 +38,8 @@ class_name<Iterator>::class_name() :
   using qi::fail;
 
   class_name_ =
-    string_("class_name")
+    identifier_
+    | simple_template_id_
     ;
 
   class_name_.name("class_name");

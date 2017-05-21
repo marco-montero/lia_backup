@@ -15,6 +15,8 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "identifier.hpp"
+#include "simple_template_id.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +33,8 @@ struct class_name : qi::grammar<Iterator, skipper<Iterator>>
 {
   class_name();
 
+  identifier<Iterator> identifier_;
+  simple_template_id<Iterator> simple_template_id_;
   qi::rule<Iterator, skipper<Iterator>> class_name_;
 
 }; // struct class_name
