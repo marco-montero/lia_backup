@@ -38,7 +38,7 @@ typedef_name<Iterator>::typedef_name() :
   using qi::fail;
 
   typedef_name_ =
-    string_("typedef_name")
+    identifier_
     ;
 
   typedef_name_.name("typedef_name");

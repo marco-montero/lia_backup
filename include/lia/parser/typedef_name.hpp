@@ -15,6 +15,7 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "identifier.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +32,7 @@ struct typedef_name : qi::grammar<Iterator, skipper<Iterator>>
 {
   typedef_name();
 
+  identifier<Iterator> identifier_;
   qi::rule<Iterator, skipper<Iterator>> typedef_name_;
 
 }; // struct typedef_name
