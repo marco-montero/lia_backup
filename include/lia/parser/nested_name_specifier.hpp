@@ -15,7 +15,12 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "decltype_specifier.hpp"
+#include "identifier.hpp"
+#include "namespace_name.hpp"
+#include "simple_template_id.hpp"
 #include "skipper.hpp"
+#include "type_name.hpp"
 
 namespace lia {
 
@@ -31,7 +36,15 @@ struct nested_name_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   nested_name_specifier();
 
+  decltype_specifier<Iterator> decltype_specifier_;
+  identifier<Iterator> identifier_;
+  namespace_name<Iterator> namespace_name_;
   qi::rule<Iterator, skipper<Iterator>> nested_name_specifier_;
+  qi::rule<Iterator, skipper<Iterator>> nested_name_specifier_cont_;
+  qi::rule<Iterator, skipper<Iterator>> nested_name_specifier_cont2_;
+  qi::rule<Iterator, skipper<Iterator>> nested_name_specifier_helper_;
+  simple_template_id<Iterator> simple_template_id_;
+  type_name<Iterator> type_name_;
 
 }; // struct nested_name_specifier
 

@@ -38,7 +38,23 @@ nested_name_specifier<Iterator>::nested_name_specifier() :
   using qi::fail;
 
   nested_name_specifier_ =
-    string_("nested_name_specifier")
+    nested_name_specifier_cont_ >> nested_name_specifier_helper_
+    ;
+
+  nested_name_specifier_cont_ =
+    -string_("::") >> nested_name_specifier_cont2_
+    | decltype_specifier_ >> string_("::")
+    ;
+
+  nested_name_specifier_cont2_ =
+    type_name_
+    | namespace_name_
+    ;
+
+  nested_name_specifier_helper_ =
+    identifier_ >> string_("::")
+    | -string_("template") >> simple_template_id_ >> string_("::")
+    | eps_
     ;
 
   nested_name_specifier_.name("nested_name_specifier");
