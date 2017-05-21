@@ -38,7 +38,10 @@ type_name<Iterator>::type_name() :
   using qi::fail;
 
   type_name_ =
-    string_("type_name")
+    class_name_
+    | enum_name_
+    | typedef_name_
+    | simple_template_id_
     ;
 
   type_name_.name("type_name");
