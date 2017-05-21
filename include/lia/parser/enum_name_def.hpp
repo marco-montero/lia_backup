@@ -38,7 +38,7 @@ enum_name<Iterator>::enum_name() :
   using qi::fail;
 
   enum_name_ =
-    string_("enum_name")
+    identifier_
     ;
 
   enum_name_.name("enum_name");

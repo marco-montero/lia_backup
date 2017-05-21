@@ -15,6 +15,7 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "identifier.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -32,6 +33,7 @@ struct enum_name : qi::grammar<Iterator, skipper<Iterator>>
   enum_name();
 
   qi::rule<Iterator, skipper<Iterator>> enum_name_;
+  identifier<Iterator> identifier_;
 
 }; // struct enum_name
 
