@@ -15,7 +15,12 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "declarator.hpp"
+#include "decl_specifier_seq.hpp"
+#include "function_body.hpp"
 #include "skipper.hpp"
+#include "virt_specifier_seq.hpp"
 
 namespace lia {
 
@@ -31,39 +36,12 @@ struct function_definition : qi::grammar<Iterator, skipper<Iterator>>
 {
   function_definition();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  declarator<Iterator> declarator_;
+  decl_specifier_seq<Iterator> decl_specifier_seq_;
+  function_body<Iterator> function_body_;
   qi::rule<Iterator, skipper<Iterator>> function_definition_;
-
-  /*
-  qi::rule<Iterator, skipper<Iterator>> alignment_specifier_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_argument_clause_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_list_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_namespace_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_scoped_token_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_specifier_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_specifier_seq_;
-  qi::rule<Iterator, skipper<Iterator>> attribute_token_;
-  qi::rule<Iterator, skipper<Iterator>> balanced_token_;
-  qi::rule<Iterator, skipper<Iterator>> balanced_token_seq_;
-  qi::rule<Iterator, skipper<Iterator>> function_definition_seq_;
-  qi::rule<Iterator, skipper<Iterator>> declarator_;
-  qi::rule<Iterator, skipper<Iterator>> decl_specifier_seq_;
-  qi::rule<Iterator, skipper<Iterator>> digit_;
-  qi::rule<Iterator, skipper<Iterator>> empty_function_definition_; // not useful so far
-  qi::rule<Iterator, skipper<Iterator>> function_body_;
-  qi::rule<Iterator, skipper<Iterator>> function_definition_;
-  qi::rule<Iterator, skipper<Iterator>> identifier_;
-  qi::rule<Iterator, skipper<Iterator>> identifier_nondigit_;
-  qi::rule<Iterator, skipper<Iterator>> keyword_;
-  qi::rule<Iterator, skipper<Iterator>> literal_;
-  qi::rule<Iterator, skipper<Iterator>> nondigit_;
-  qi::rule<Iterator, skipper<Iterator>> operator_;
-  qi::rule<Iterator, skipper<Iterator>> punctuator_;
-  qi::rule<Iterator, skipper<Iterator>> token_;
-  qi::rule<Iterator, skipper<Iterator>> translation_unit_;
-  qi::rule<Iterator, skipper<Iterator>> universal_character_name_;
-  qi::rule<Iterator, skipper<Iterator>> virt_specifier_seq_;
-  */
+  virt_specifier_seq<Iterator> virt_specifier_seq_;
 
 }; // struct function_definition
 
