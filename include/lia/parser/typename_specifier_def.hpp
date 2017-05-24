@@ -38,7 +38,12 @@ typename_specifier<Iterator>::typename_specifier() :
   using qi::fail;
 
   typename_specifier_ =
-    string_("typename_specifier")
+    string_("typename") >> nested_name_specifier_ >> typename_specifier_cont_;
+    ;
+
+  typename_specifier_cont_ =
+    identifier_
+    | -string_("template") >> simple_template_id_
     ;
 
   typename_specifier_.name("typename_specifier");
