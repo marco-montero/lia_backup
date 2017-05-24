@@ -15,6 +15,11 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "class_key.hpp"
+#include "identifier.hpp"
+#include "nested_name_specifier.hpp"
+#include "simple_template_id.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,7 +36,13 @@ struct elaborated_type_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   elaborated_type_specifier();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  class_key<Iterator> class_key_;
   qi::rule<Iterator, skipper<Iterator>> elaborated_type_specifier_;
+  qi::rule<Iterator, skipper<Iterator>> elaborated_type_specifier_cont_;
+  identifier<Iterator> identifier_;
+  nested_name_specifier<Iterator> nested_name_specifier_;
+  simple_template_id<Iterator> simple_template_id_;
 
 }; // struct elaborated_type_specifier
 

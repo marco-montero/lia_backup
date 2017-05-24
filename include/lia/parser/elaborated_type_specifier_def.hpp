@@ -38,7 +38,13 @@ elaborated_type_specifier<Iterator>::elaborated_type_specifier() :
   using qi::fail;
 
   elaborated_type_specifier_ =
-    string_("elaborated_type_specifier")
+    class_key_ >> elaborated_type_specifier_cont_
+    | string_("enum") >> -nested_name_specifier_ >> identifier_
+    ;
+
+  elaborated_type_specifier_cont_ =
+    -attribute_specifier_seq_ >> -nested_name_specifier_ >> identifier_
+    | -nested_name_specifier_ >> string_("template") >> simple_template_id_
     ;
 
   elaborated_type_specifier_.name("elaborated_type_specifier");
