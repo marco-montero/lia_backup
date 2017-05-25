@@ -38,7 +38,7 @@ typename_specifier<Iterator>::typename_specifier() :
   using qi::fail;
 
   typename_specifier_ =
-    string_("typename") >> nested_name_specifier_ >> typename_specifier_cont_;
+    string_("typename") >> nested_name_specifier_ >> typename_specifier_cont_
     ;
 
   typename_specifier_cont_ =

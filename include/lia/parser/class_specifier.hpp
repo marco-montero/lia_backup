@@ -15,6 +15,8 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "class_head.hpp"
+#include "member_specification.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,7 +33,9 @@ struct class_specifier : qi::grammar<Iterator, skipper<Iterator>>
 {
   class_specifier();
 
+  class_head<Iterator> class_head_;
   qi::rule<Iterator, skipper<Iterator>> class_specifier_;
+  member_specification<Iterator> member_specification_;
 
 }; // struct class_specifier
 

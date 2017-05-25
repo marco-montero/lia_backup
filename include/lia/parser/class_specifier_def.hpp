@@ -38,7 +38,7 @@ class_specifier<Iterator>::class_specifier() :
   using qi::fail;
 
   class_specifier_ =
-    string_("class_specifier")
+    class_head_ >> char_('{') >> -member_specification_ >> char_('}')
     ;
 
   class_specifier_.name("class_specifier");
