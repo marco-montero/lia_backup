@@ -38,7 +38,8 @@ cv_qualifier<Iterator>::cv_qualifier() :
   using qi::fail;
 
   cv_qualifier_ =
-    string_("cv_qualifier")
+    string_("const")
+    | string_("volatile")
     ;
 
   cv_qualifier_.name("cv_qualifier");
