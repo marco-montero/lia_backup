@@ -35,6 +35,7 @@ namespace client {
 template <typename Iterator> struct template_declaration;
 template <typename Iterator> struct explicit_instantiation;
 template <typename Iterator> struct explicit_specialization;
+template <typename Iterator> struct linkage_specification;
 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;

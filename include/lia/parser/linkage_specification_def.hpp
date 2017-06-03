@@ -23,8 +23,9 @@ namespace parser {
 namespace client {
 
 template <typename Iterator>
-linkage_specification<Iterator>::linkage_specification() :
-  linkage_specification::base_type(linkage_specification_)
+linkage_specification<Iterator>::linkage_specification(declaration<Iterator> *d) :
+  linkage_specification::base_type(linkage_specification_),
+  declaration_(d)
 {
   qi::char_type char_;
   qi::eps_type eps_;
@@ -38,8 +39,21 @@ linkage_specification<Iterator>::linkage_specification() :
   using qi::fail;
 
   linkage_specification_ =
-    string_("linkage_specification")
+    string_("extern") >> string_literal_ >> linkage_specification_cont_
     ;
+
+  linkage_specification_cont_ =
+    char_('{') >> -declaration_seq_ >> char_('}')
+    | (*declaration_)
+    ;
+
+  declaration_seq_ =
+    (*declaration_) >> *(*declaration_)
+    ;
+
+  linkage_specification_.name("linkage_specification");
+
+  debug(linkage_specification_);
 }
 
 } // namespace client
