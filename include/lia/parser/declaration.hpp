@@ -33,6 +33,7 @@ namespace parser {
 namespace client {
 
 template <typename Iterator> struct template_declaration;
+template <typename Iterator> struct explicit_instantiation;
 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;

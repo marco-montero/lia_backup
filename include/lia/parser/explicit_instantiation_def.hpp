@@ -23,8 +23,9 @@ namespace parser {
 namespace client {
 
 template <typename Iterator>
-explicit_instantiation<Iterator>::explicit_instantiation() :
-  explicit_instantiation::base_type(explicit_instantiation_)
+explicit_instantiation<Iterator>::explicit_instantiation(declaration<Iterator> *d) :
+  explicit_instantiation::base_type(explicit_instantiation_),
+  declaration_(d)
 {
   qi::char_type char_;
   qi::eps_type eps_;
@@ -38,8 +39,12 @@ explicit_instantiation<Iterator>::explicit_instantiation() :
   using qi::fail;
 
   explicit_instantiation_ =
-    string_("explicit_instantiation")
+    -string_("extern") >> string_("template") >> (*declaration_)
     ;
+
+  explicit_instantiation_.name("explicit_instantiation");
+
+  debug(explicit_instantiation_);
 }
 
 } // namespace client
