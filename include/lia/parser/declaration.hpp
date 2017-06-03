@@ -24,12 +24,15 @@
 #include "namespace_definition.hpp"
 #include "skipper.hpp"
 #include "template_declaration.hpp"
+#include "template_parameter_list.hpp"
 
 namespace lia {
 
 namespace parser {
 
 namespace client {
+
+template <typename Iterator> struct template_declaration;
 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
@@ -49,6 +52,7 @@ struct declaration : qi::grammar<Iterator, skipper<Iterator>>
   linkage_specification<Iterator> linkage_specification_;
   namespace_definition<Iterator> namespace_definition_;
   template_declaration<Iterator> template_declaration_;
+  template_parameter_list<Iterator> template_parameter_list_;
 
 }; // struct declaration
 

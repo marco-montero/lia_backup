@@ -23,8 +23,9 @@ namespace parser {
 namespace client {
 
 template <typename Iterator>
-template_declaration<Iterator>::template_declaration() :
-  template_declaration::base_type(template_declaration_)
+template_declaration<Iterator>::template_declaration(declaration<Iterator> *d) :
+  template_declaration::base_type(template_declaration_),
+  declaration_(d)
 {
   qi::char_type char_;
   qi::eps_type eps_;
@@ -38,7 +39,8 @@ template_declaration<Iterator>::template_declaration() :
   using qi::fail;
 
   template_declaration_ =
-    string_("template_declaration")
+    string_("template") >> char_('<') >> template_parameter_list_ >> char_('>')
+    >> (*declaration_)
     ;
 }
 

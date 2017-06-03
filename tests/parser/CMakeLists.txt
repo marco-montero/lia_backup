@@ -41,6 +41,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/trailing_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/typename_specifier.cpp
@@ -104,6 +105,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/trailing_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/typename_specifier.cpp

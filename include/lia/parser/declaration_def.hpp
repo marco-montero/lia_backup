@@ -24,9 +24,11 @@ namespace client {
 
 template <typename Iterator>
 declaration<Iterator>::declaration() :
-  declaration::base_type(declaration_)
+  declaration::base_type(declaration_),
+  template_declaration_(this)
 {
   qi::char_type char_;
+  qi::string_type string_;
   qi::eps_type eps_;
   qi::alpha_type alpha_;
   qi::digit_type digit_;
