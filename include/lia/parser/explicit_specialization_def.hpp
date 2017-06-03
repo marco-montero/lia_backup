@@ -23,8 +23,9 @@ namespace parser {
 namespace client {
 
 template <typename Iterator>
-explicit_specialization<Iterator>::explicit_specialization() :
-  explicit_specialization::base_type(explicit_specialization_)
+explicit_specialization<Iterator>::explicit_specialization(declaration<Iterator> *d) :
+  explicit_specialization::base_type(explicit_specialization_),
+  declaration_(d)
 {
   qi::char_type char_;
   qi::eps_type eps_;
@@ -38,8 +39,12 @@ explicit_specialization<Iterator>::explicit_specialization() :
   using qi::fail;
 
   explicit_specialization_ =
-    string_("explicit_specialization")
+    string_("template") >> char_('<') >> char_('>') >> (*declaration_)
     ;
+
+  explicit_specialization_.name("explicit_specialization");
+
+  debug(explicit_specialization_);
 }
 
 } // namespace client

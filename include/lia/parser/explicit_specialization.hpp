@@ -15,6 +15,7 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "declaration.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -23,14 +24,17 @@ namespace parser {
 
 namespace client {
 
+template <typename Iterator> struct declaration;
+
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
 
 template <typename Iterator>
 struct explicit_specialization : qi::grammar<Iterator, skipper<Iterator>>
 {
-  explicit_specialization();
+  explicit_specialization(declaration<Iterator> *d);
 
+  declaration<Iterator> *declaration_;
   qi::rule<Iterator, skipper<Iterator>> explicit_specialization_;
 
 }; // struct explicit_specialization

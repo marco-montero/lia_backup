@@ -26,7 +26,8 @@ template <typename Iterator>
 declaration<Iterator>::declaration() :
   declaration::base_type(declaration_),
   template_declaration_(this),
-  explicit_instantiation_(this)
+  explicit_instantiation_(this),
+  explicit_specialization_(this)
 {
   qi::char_type char_;
   qi::string_type string_;
