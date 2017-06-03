@@ -38,7 +38,7 @@ attribute_declaration<Iterator>::attribute_declaration() :
   using qi::fail;
 
   attribute_declaration_ =
-    string_("attribute_declaration")
+    attribute_specifier_seq_ >> char_(';')
     ;
 }
 

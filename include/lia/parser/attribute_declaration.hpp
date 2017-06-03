@@ -15,6 +15,7 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,6 +32,7 @@ struct attribute_declaration : qi::grammar<Iterator, skipper<Iterator>>
 {
   attribute_declaration();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
   qi::rule<Iterator, skipper<Iterator>> attribute_declaration_;
 
 }; // struct attribute_declaration
