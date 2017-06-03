@@ -38,8 +38,13 @@ namespace_definition<Iterator>::namespace_definition() :
   using qi::fail;
 
   namespace_definition_ =
-    string_("namespace_definition")
+    named_namespace_definition_
+    | unnamed_namespace_definition_
     ;
+
+  namespace_definition_.name("namespace_definition");
+
+  debug(namespace_definition_);
 }
 
 } // namespace client
