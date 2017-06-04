@@ -35,7 +35,14 @@ struct namespace_definition : qi::grammar<Iterator, skipper<Iterator>>
   namespace_definition(declaration<Iterator> *d);
 
   declaration<Iterator> *declaration_;
+  // a compound between original-namespace-definition and 
+  // extension-namespace-defintion, a subset named-namespace-definition
+  qi::rule<Iterator, skipper<Iterator>> generic_namespace_definition_;
+  qi::rule<Iterator, skipper<Iterator>> identifier_or_original_namespace_name_;
+  qi::rule<Iterator, skipper<Iterator>> namespace_body_;
   qi::rule<Iterator, skipper<Iterator>> namespace_definition_;
+  qi::rule<Iterator, skipper<Iterator>> named_namespace_definition_;
+  qi::rule<Iterator, skipper<Iterator>> unnamed_namespace_definition_;
 
 }; // struct namespace_definition
 

@@ -39,7 +39,22 @@ namespace_definition<Iterator>::namespace_definition(declaration<Iterator> *d) :
   using qi::fail;
 
   namespace_definition_ =
-    string_("perro")
+    -string_("inline") >> string_("namespace") >>
+    (generic_namespace_definition_ |
+    unnamed_namespace_definition_)
+    ;
+
+  generic_namespace_definition_ =
+    identifier_or_original_namespace_name_
+    >> char_('{') >> namespace_body_ >> char_('}')
+    ;
+
+  unnamed_namespace_definition_ =
+    char_('{') >> namespace_body_ >> char_('}')
+    ;
+
+  namespace_body_ =
+    (*declaration_) >> *(*declaration_)
     ;
 
   namespace_definition_.name("namespace_definition");
