@@ -23,8 +23,9 @@ namespace parser {
 namespace client {
 
 template <typename Iterator>
-namespace_definition<Iterator>::namespace_definition() :
-  namespace_definition::base_type(namespace_definition_)
+namespace_definition<Iterator>::namespace_definition(declaration<Iterator> *d) :
+  namespace_definition::base_type(namespace_definition_),
+  declaration_(d)
 {
   qi::char_type char_;
   qi::eps_type eps_;
@@ -38,8 +39,7 @@ namespace_definition<Iterator>::namespace_definition() :
   using qi::fail;
 
   namespace_definition_ =
-    named_namespace_definition_
-    | unnamed_namespace_definition_
+    string_("perro")
     ;
 
   namespace_definition_.name("namespace_definition");

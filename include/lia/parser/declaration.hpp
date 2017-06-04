@@ -36,6 +36,7 @@ template <typename Iterator> struct template_declaration;
 template <typename Iterator> struct explicit_instantiation;
 template <typename Iterator> struct explicit_specialization;
 template <typename Iterator> struct linkage_specification;
+template <typename Iterator> struct namespace_definition;
 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;

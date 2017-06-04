@@ -28,7 +28,6 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/member_specification.cpp
-  ${CMAKE_SOURCE_DIR}/src/parser/named_namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
@@ -51,7 +50,6 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier_seq.cpp
-  ${CMAKE_SOURCE_DIR}/src/parser/unnamed_namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_directive.cpp
@@ -94,7 +92,6 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/member_specification.cpp
-  ${CMAKE_SOURCE_DIR}/src/parser/named_namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_alias_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
@@ -117,7 +114,6 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/type_specifier_seq.cpp
-  ${CMAKE_SOURCE_DIR}/src/parser/unnamed_namespace_definition.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/unqualified_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/using_directive.cpp

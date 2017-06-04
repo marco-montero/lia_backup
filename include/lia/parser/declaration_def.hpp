@@ -28,7 +28,8 @@ declaration<Iterator>::declaration() :
   template_declaration_(this),
   explicit_instantiation_(this),
   explicit_specialization_(this),
-  linkage_specification_(this)
+  linkage_specification_(this),
+  namespace_definition_(this)
 {
   qi::char_type char_;
   qi::string_type string_;

@@ -15,9 +15,8 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
-#include "named_namespace_definition.hpp"
+#include "declaration.hpp"
 #include "skipper.hpp"
-#include "unnamed_namespace_definition.hpp"
 
 namespace lia {
 
@@ -25,17 +24,18 @@ namespace parser {
 
 namespace client {
 
+template <typename Iterator> struct declaration;
+
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
 
 template <typename Iterator>
 struct namespace_definition : qi::grammar<Iterator, skipper<Iterator>>
 {
-  namespace_definition();
+  namespace_definition(declaration<Iterator> *d);
 
-  named_namespace_definition<Iterator> named_namespace_definition_;
+  declaration<Iterator> *declaration_;
   qi::rule<Iterator, skipper<Iterator>> namespace_definition_;
-  unnamed_namespace_definition<Iterator> unnamed_namespace_definition_;
 
 }; // struct namespace_definition
 
