@@ -15,7 +15,11 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "attribute_specifier_seq.hpp"
+#include "function_specifier.hpp"
 #include "skipper.hpp"
+#include "storage_class_specifier.hpp"
+#include "type_specifier.hpp"
 
 namespace lia {
 
@@ -31,7 +35,13 @@ struct decl_specifier_seq : qi::grammar<Iterator, skipper<Iterator>>
 {
   decl_specifier_seq();
 
+  attribute_specifier_seq<Iterator> attribute_specifier_seq_;
+  qi::rule<Iterator, skipper<Iterator>> decl_specifier_;
   qi::rule<Iterator, skipper<Iterator>> decl_specifier_seq_;
+  qi::rule<Iterator, skipper<Iterator>> decl_specifier_seq_cont_;
+  function_specifier<Iterator> function_specifier_;
+  storage_class_specifier<Iterator> storage_class_specifier_;
+  type_specifier<Iterator> type_specifier_;
 
 }; // struct decl_specifier_seq
 

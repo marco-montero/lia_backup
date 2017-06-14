@@ -26,12 +26,6 @@ template <typename Iterator>
 translation_unit<Iterator>::translation_unit() :
   translation_unit::base_type(translation_unit_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;

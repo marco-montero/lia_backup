@@ -32,12 +32,6 @@ declaration<Iterator>::declaration() :
   namespace_definition_(this)
 {
   qi::char_type char_;
-  qi::string_type string_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;

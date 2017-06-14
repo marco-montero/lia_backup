@@ -24,6 +24,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_body.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/function_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/identifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
@@ -39,6 +40,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/storage_class_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp
@@ -88,6 +90,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_body.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/function_definition.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/function_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/identifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/init_declarator_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/linkage_specification.cpp
@@ -103,6 +106,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static_assert_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/static__assert.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/storage_class_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp

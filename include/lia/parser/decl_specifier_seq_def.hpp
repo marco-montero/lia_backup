@@ -26,19 +26,27 @@ template <typename Iterator>
 decl_specifier_seq<Iterator>::decl_specifier_seq() :
   decl_specifier_seq::base_type(decl_specifier_seq_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   decl_specifier_seq_ =
-    string_("decl_specifier_seq")
+    decl_specifier_ >> decl_specifier_seq_cont_;
+    ;
+
+  decl_specifier_seq_cont_ =
+    -attribute_specifier_seq_
+    | decl_specifier_seq_
+    ;
+
+  decl_specifier_ =
+    storage_class_specifier_
+    | type_specifier_
+    | function_specifier_
+    | string_("friend")
+    | string_("typedef")
+    | string_("constexpr")
     ;
 
   decl_specifier_seq_.name("decl_specifier_seq");
