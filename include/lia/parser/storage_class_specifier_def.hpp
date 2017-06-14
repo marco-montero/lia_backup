@@ -38,7 +38,11 @@ storage_class_specifier<Iterator>::storage_class_specifier() :
   using qi::fail;
 
   storage_class_specifier_ =
-    string_("storage_class_specifier")
+    string_("register")
+    | string_("static")
+    | string_("thread_local")
+    | string_("extern")
+    | string_("mutable")
     ;
 
   storage_class_specifier_.name("storage_class_specifier");
