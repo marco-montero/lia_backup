@@ -38,7 +38,7 @@ using_directive<Iterator>::using_directive() :
   using qi::fail;
 
   using_directive_ =
-    -attribute_specifier_seq_ >> string_("using") >> -string_("typename") >> -nested_name_specifier_ 
+    -attribute_specifier_seq_ >> string_("using") >> string_("namespace") >> -nested_name_specifier_ 
     >> namespace_name_ >> char_(';')
     ;
 
