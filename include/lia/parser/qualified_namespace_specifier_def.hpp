@@ -26,19 +26,13 @@ template <typename Iterator>
 qualified_namespace_specifier<Iterator>::qualified_namespace_specifier() :
   qualified_namespace_specifier::base_type(qualified_namespace_specifier_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   qualified_namespace_specifier_ =
-    string_("qualified_namespace_specifier")
+    -nested_name_specifier_ >> namespace_name_
     ;
 
   qualified_namespace_specifier_.name("qualified_namespace_specifier");
