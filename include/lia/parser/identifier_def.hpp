@@ -26,19 +26,15 @@ template <typename Iterator>
 identifier<Iterator>::identifier() :
   identifier::base_type(identifier_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
   qi::alpha_type alpha_;
-  qi::digit_type digit_;
+  qi::alnum_type alnum_;
   qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
-  qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   identifier_ =
-    string_("identifier")
+    lexeme_[(alpha_ | '_' | '$') >> *(alnum_ | '_' | '$')]
     ;
 
   identifier_.name("identifier");
