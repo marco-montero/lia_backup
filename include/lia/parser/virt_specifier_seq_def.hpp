@@ -26,19 +26,18 @@ template <typename Iterator>
 virt_specifier_seq<Iterator>::virt_specifier_seq() :
   virt_specifier_seq::base_type(virt_specifier_seq_)
 {
-  qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   qi::string_type string_;
   using qi::on_error;
   using qi::debug;
   using qi::fail;
 
   virt_specifier_seq_ =
-    string_("virt_specifier_seq")
+    virt_specifier_ >> *virt_specifier_seq_
+    ;
+
+  virt_specifier_ =
+    string_("override")
+    | string_("final")
     ;
 
   virt_specifier_seq_.name("virt_specifier_seq");

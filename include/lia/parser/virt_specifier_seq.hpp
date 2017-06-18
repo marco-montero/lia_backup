@@ -31,6 +31,7 @@ struct virt_specifier_seq : qi::grammar<Iterator, skipper<Iterator>>
 {
   virt_specifier_seq();
 
+  qi::rule<Iterator, skipper<Iterator>> virt_specifier_;
   qi::rule<Iterator, skipper<Iterator>> virt_specifier_seq_;
 
 }; // struct virt_specifier_seq
