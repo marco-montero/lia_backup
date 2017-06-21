@@ -38,7 +38,20 @@ unqualified_id<Iterator>::unqualified_id() :
   using qi::fail;
 
   unqualified_id_ =
-    string_("unqualified_id")
+    identifier_
+    | operator_helper_
+    | literal_operator_id_
+    | char_('~') >> class_name_
+    | char_('~') >> decltype_specifier_
+    | template_id_
+    ;
+
+  operator_helper_ =
+    string_("operator") >> (operator_ | literal_operator_id_)
+    ;
+
+  literal_operator_id_ =
+    string_("\"\"") >> identifier_
     ;
 
   unqualified_id_.name("unqualified_id");

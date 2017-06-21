@@ -15,7 +15,13 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "class_name.hpp"
+#include "conversion_function_id.hpp"
+#include "decltype_specifier.hpp"
+#include "identifier.hpp"
+#include "operator_key.hpp"
 #include "skipper.hpp"
+#include "template_id.hpp"
 
 namespace lia {
 
@@ -31,6 +37,13 @@ struct unqualified_id : qi::grammar<Iterator, skipper<Iterator>>
 {
   unqualified_id();
 
+  class_name<Iterator> class_name_;
+  decltype_specifier<Iterator> decltype_specifier_;
+  identifier<Iterator> identifier_;
+  qi::rule<Iterator, skipper<Iterator>> literal_operator_id_;
+  operator_key<Iterator> operator_;
+  qi::rule<Iterator, skipper<Iterator>> operator_helper_;
+  template_id<Iterator> template_id_;
   qi::rule<Iterator, skipper<Iterator>> unqualified_id_;
 
 }; // struct unqualified_id

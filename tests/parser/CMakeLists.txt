@@ -34,6 +34,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/nested_name_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/operator_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
@@ -43,6 +44,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/storage_class_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/trailing_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
@@ -100,6 +102,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/namespace_name.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/nested_name_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/operator_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
@@ -109,6 +112,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/storage_class_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/string_literal.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_declaration.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/template_parameter_list.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/trailing_type_specifier.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/translation_unit.cpp
