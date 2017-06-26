@@ -38,7 +38,31 @@ template_id<Iterator>::template_id() :
   using qi::fail;
 
   template_id_ =
-    string_("template_id")
+    simple_template_id_
+    | operator_function_id_ >> char_('<') >> -template_argument_list_ >> char_('>')
+    | literal_operator_id_ >> char_('<') >> -template_argument_list_ >> char_('>')
+    ;
+
+  simple_template_id_ =
+    identifier_ >> char_('<') >> -template_argument_list_ >> char_('>')
+    ;
+
+  operator_function_id_ =
+    string_("operator") >> operator_
+    ;
+
+  literal_operator_id_ =
+    string_("operator") >> string_("\"\"") >> identifier_
+    ;
+
+  template_argument_list_ =
+    template_argument_ >> -string_("...") >> *(template_argument_list_)
+    ;
+
+  template_argument_ =
+    constant_expression_
+    | type_id_
+    | id_expression_
     ;
 
   template_id_.name("template_id");

@@ -8,7 +8,7 @@
  ****************************************************************************/
 
 #if !defined(LIA_PARSER_CLIENT_OPERATOR_KEY_HPP)
-#define LIA_PARSER_CLIENT_USING_OPERATOR_KEY_HPP
+#define LIA_PARSER_CLIENT_OPERATOR_KEY_HPP
 
 #define BOOST_SPIRIT_NO_PREDEFINED_TERMINALS
 

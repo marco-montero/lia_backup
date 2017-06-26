@@ -15,6 +15,9 @@
 #define BOOST_SPIRIT_QI_DEBUG
 #include <boost/spirit/include/qi.hpp>
 
+#include "compound_statement.hpp"
+#include "ctor_initializer.hpp"
+#include "exception_declaration.hpp"
 #include "skipper.hpp"
 
 namespace lia {
@@ -31,7 +34,14 @@ struct function_body : qi::grammar<Iterator, skipper<Iterator>>
 {
   function_body();
 
+  compound_statement<Iterator> compound_statement_;
+  ctor_initializer<Iterator> ctor_initializer_;
+  qi::rule<Iterator, skipper<Iterator>> exception_declaration_;
   qi::rule<Iterator, skipper<Iterator>> function_body_;
+  qi::rule<Iterator, skipper<Iterator>> function_body_helper_;
+  qi::rule<Iterator, skipper<Iterator>> function_try_block_;
+  qi::rule<Iterator, skipper<Iterator>> handler_;
+  qi::rule<Iterator, skipper<Iterator>> handler_seq_;
 
 }; // struct function_body
 

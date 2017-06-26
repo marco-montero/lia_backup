@@ -38,7 +38,27 @@ function_body<Iterator>::function_body() :
   using qi::fail;
 
   function_body_ =
-    string_("function_body")
+    -ctor_initializer_ >> compound_statement_
+    | function_try_block_
+    | function_body_helper_
+    ;
+
+  function_body_helper_ =
+    char_('=') >> (string_("default") | string_("delete")) >> char_(';')
+    ;
+
+  function_try_block_ =
+    string_("try") >> -ctor_initializer_ >> compound_statement_
+    >> handler_seq_
+    ;
+
+  handler_seq_ =
+    handler_ >> handler_seq_
+    ;
+
+  handler_ =
+    string_("catch") >> char_('(') >> exception_declaration_
+    >> char_(')') >> compound_statement_
     ;
 
   function_body_.name("function_body");

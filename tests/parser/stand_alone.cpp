@@ -16,11 +16,17 @@ int main()
 {
   lia::parser::Analyzer analyzer;
 
-  std::string code("asm ( \" test \") ;");
+  std::string code0("asm ( \" test \") ;");
 
-  auto resp = analyzer.parse(code);
+  auto resp = analyzer.parse(code0);
 
-  std::cout << "Ouput value: " << resp << '\n';
+  std::cout << code0 << " --> " << resp << '\n';
+
+  std::string code1("eval(int x, int y);");
+
+  resp = analyzer.parse(code1);
+
+  std::cout << code1 << " --> " << resp << '\n';
 
   return EXIT_SUCCESS;
 }
