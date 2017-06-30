@@ -27,11 +27,6 @@ constant_expression<Iterator>::constant_expression() :
   constant_expression::base_type(constant_expression_)
 {
   qi::char_type char_;
-  qi::eps_type eps_;
-  qi::alpha_type alpha_;
-  qi::digit_type digit_;
-  qi::lexeme_type lexeme_;
-  qi::raw_type raw_;
   qi::string_type string_;
   using qi::on_error;
   using qi::debug;
