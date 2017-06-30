@@ -28,5 +28,23 @@ int main()
 
   std::cout << code1 << " --> " << resp << '\n';
 
+  std::string code2("int a = 10;");
+
+  resp = analyzer.parse(code2);
+
+  std::cout << code2 << " --> " << resp << '\n';
+
+  std::string code3("char x[10];");
+
+  resp = analyzer.parse(code3);
+
+  std::cout << code3 << " --> " << resp << '\n';
+
+  std::string code4("b = c >> 2;");
+
+  resp = analyzer.parse(code4);
+
+  std::cout << code4 << " --> " << resp << '\n';
+
   return EXIT_SUCCESS;
 }
