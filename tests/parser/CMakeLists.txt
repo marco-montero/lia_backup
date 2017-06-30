@@ -39,6 +39,7 @@ add_executable (test_analyzer test_analyzer.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/operator_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/relational_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp
@@ -110,6 +111,7 @@ add_executable (stand_alone stand_alone.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/opaque_enum_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/operator_key.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/qualified_namespace_specifier.cpp
+  ${CMAKE_SOURCE_DIR}/src/parser/relational_expression.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_declaration.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_template_id.cpp
   ${CMAKE_SOURCE_DIR}/src/parser/simple_type_specifier.cpp

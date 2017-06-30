@@ -38,7 +38,74 @@ constant_expression<Iterator>::constant_expression() :
   using qi::fail;
 
   constant_expression_ =
-    string_("constant_expression")
+    logical_or_expression_ >> *(char_('?') >> expression_
+    >> char_(':') >> assignment_expression_)
+    ;
+
+  logical_or_expression_ =
+    logical_and_expression_ >> *(string_("||") >> logical_and_expression_)
+    ;
+
+  logical_and_expression_ =
+    inclusive_or_expression_ >> *(string_("&&") >> inclusive_or_expression_)
+    ;
+
+  inclusive_or_expression_ =
+    exclusive_or_expression_ >> *(char_('|') >> exclusive_or_expression_)
+    ;
+
+  exclusive_or_expression_ =
+    and_expression_ >> *(char_('^') >> and_expression_)
+    ;
+
+  and_expression_ =
+    equality_expression_ >> *(char_('&') >> equality_expression_)
+    ;
+
+  equality_expression_ =
+    relational_expression_ >> equality_expression_helper_
+    ;
+
+  equality_expression_helper_ =
+    string_("==") >> relational_expression_
+    | string_("!=") >> relational_expression_
+    ;
+
+  assignment_expression_ =
+    constant_expression_
+    | logical_or_expression_ >> assignment_operator_ >> initializer_clause_
+    | throw_expression_
+    ;
+
+  assignment_operator_ =
+    char_('=')
+    | string_("*=")
+    | string_("/=")
+    | string_("%=")
+    | string_("+=")
+    | string_("-=")
+    | string_(">>=")
+    | string_("<<=")
+    | string_("&=")
+    | string_("^=")
+    | string_("|=")
+    ;
+
+  initializer_clause_ =
+    assignment_expression_
+    | braced_init_list_
+    ;
+
+  braced_init_list_ =
+    char_('{') >> -(initializer_list_ >> -char_(',')) >> char_('}')
+    ;
+
+  initializer_list_ =
+    initializer_clause_ >> -string_("...") >> *(char_(',') >> initializer_clause_ >> -string_("..."))
+    ;
+
+  throw_expression_ =
+    string_("throw") >> assignment_expression_
     ;
 
   constant_expression_.name("constant_expression");
